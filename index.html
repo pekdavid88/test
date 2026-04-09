@@ -3,58 +3,271 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sunset Valley Motel | Affordable Comfort in Ohio</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <title>Premium Hotel Template</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@200..800&display=swap');
+
+        :root {
+            --primary: #1a1a1a;
+            --accent: #c5a059;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        h1, h2, h3, .serif {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .bg-accent { background-color: var(--accent); }
+        .text-accent { color: var(--accent); }
+        .border-accent { border-color: var(--accent); }
+
+        .room-card:hover .room-overlay {
+            opacity: 1;
+        }
+    </style>
 </head>
-<body>
+<body class="bg-stone-50 text-stone-900">
 
-    <header>
-        <nav>
-            <div class="logo">SUNSET VALLEY</div>
-            <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#rooms">Rooms</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-        <div class="hero">
-            <h1>Your Home Away From Home</h1>
-            <p>Clean, Quiet, and Affordable Rooms in the Heart of Ohio.</p>
-            <a href="#contact" class="btn">Book Now</a>
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-white/80 backdrop-blur-md border-b border-stone-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex-shrink-0 flex items-center">
+                    <span class="serif text-2xl font-bold tracking-tighter text-stone-800">LUXE<span class="text-accent">STAY</span></span>
+                </div>
+                <div class="hidden md:flex space-x-8 text-sm font-medium uppercase tracking-widest">
+                    <a href="#home" class="hover:text-accent transition-colors">Home</a>
+                    <a href="#about" class="hover:text-accent transition-colors">About</a>
+                    <a href="#rooms" class="hover:text-accent transition-colors">Rooms</a>
+                    <a href="#contact" class="px-5 py-2 bg-accent text-white rounded-full hover:bg-stone-800 transition-all">Book Now</a>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-stone-800">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
         </div>
-    </header>
+    </nav>
 
-    <section id="about">
-        <h2>Welcome to Sunset Valley</h2>
-        <p>Family-owned and operated for over 20 years. We pride ourselves on providing a peaceful night's sleep for travelers, truckers, and families alike.</p>
-    </section>
-
-    <section id="rooms">
-        <div class="room-card"> <img src="https://www.potawatomi.com/application/files/3517/4560/6138/Signature-2-Queen_body.webp" style="width:100%; border-radius:8px;"> <h3>Single Queen</h3> <p>Perfect for solo travelers.</p> <span class="price">$79 / night</span> </div>
-        <div class="room-card">
-            <h3>Double Full</h3>
-            <p>Great for families. Two comfortable beds and a spacious bathroom.</p>
-            <span class="price">$99 / night</span>
+    <!-- Hero Section -->
+    <section id="home" class="relative h-screen flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1920&q=80" alt="Hotel Hero Image" class="w-full h-full object-cover scale-105 animate-[subtle-zoom_20s_infinite_alternate]">
+            <div class="absolute inset-0 bg-black/40"></div>
         </div>
-    </section>
-
-    <section id="contact">
-        <h2>Contact Us</h2>
-        <p>Call us directly at: <strong>+1 (555) 123-4567</strong></p>
-        <p>Address: 123 Highway Ave, Springfield, OH</p>
         
-        <form action="https://formspree.io/f/YOUR_ID_HERE" method="POST">
-            <input type="text" name="name" placeholder="Your Name" required>
-            <input type="email" name="email" placeholder="Your Email" required>
-            <textarea name="message" placeholder="How can we help?"></textarea>
-            <button type="submit" class="btn">Send Message</button>
-        </form>
+        <div class="relative z-10 text-center text-white px-4">
+            <span class="uppercase tracking-[0.3em] text-sm mb-4 block animate-fade-in">Welcome to Serenity</span>
+            <h1 class="text-5xl md:text-7xl lg:text-8xl mb-8 opacity-0 animate-[fade-in-up_1s_ease-out_forwards]">Experience<br>Pure Elegance</h1>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#rooms" class="bg-accent text-white px-8 py-4 rounded-full text-sm font-bold uppercase tracking-widest hover:bg-white hover:text-stone-900 transition-all shadow-lg">View Our Rooms</a>
+            </div>
+        </div>
     </section>
 
-    <footer>
-        <p>&copy; 2026 Sunset Valley Motel. All rights reserved.</p>
+    <!-- About Section -->
+    <section id="about" class="py-24 px-4 bg-white">
+        <div class="max-w-5xl mx-auto text-center">
+            <h2 class="text-accent text-sm font-bold uppercase tracking-widest mb-4">Our Story</h2>
+            <h3 class="text-3xl md:text-5xl mb-8">Where Tradition Meets Modern Comfort</h3>
+            <p class="text-stone-500 leading-relaxed text-lg mb-12 max-w-3xl mx-auto">
+                Our hotel is more than just a place to stay—it’s an experience. We’ve designed every detail to ensure our guests receive the highest level of service. Whether you’re on a business trip or a family getaway, we make you feel right at home.
+            </p>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="text-accent text-4xl mb-2"><i class="fas fa-wifi"></i></div>
+                    <span class="text-xs uppercase font-bold tracking-tighter">Free High-Speed WiFi</span>
+                </div>
+                <div>
+                    <div class="text-accent text-4xl mb-2"><i class="fas fa-spa"></i></div>
+                    <span class="text-xs uppercase font-bold tracking-tighter">Wellness & Spa</span>
+                </div>
+                <div>
+                    <div class="text-accent text-4xl mb-2"><i class="fas fa-utensils"></i></div>
+                    <span class="text-xs uppercase font-bold tracking-tighter">Gourmet Dining</span>
+                </div>
+                <div>
+                    <div class="text-accent text-4xl mb-2"><i class="fas fa-parking"></i></div>
+                    <span class="text-xs uppercase font-bold tracking-tighter">Free Valet Parking</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rooms and Gallery -->
+    <section id="rooms" class="py-24 px-4 bg-stone-100">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-4">
+                <div>
+                    <h2 class="text-accent text-sm font-bold uppercase tracking-widest mb-4">Accommodations</h2>
+                    <h3 class="text-4xl md:text-5xl">Choose Your Perfect Room</h3>
+                </div>
+                <div class="flex gap-2">
+                    <button class="filter-btn active bg-accent text-white px-6 py-2 rounded-full text-xs font-bold uppercase" data-filter="all">All</button>
+                    <button class="filter-btn border border-stone-300 px-6 py-2 rounded-full text-xs font-bold uppercase hover:bg-accent hover:text-white transition-all" data-filter="deluxe">Deluxe</button>
+                    <button class="filter-btn border border-stone-300 px-6 py-2 rounded-full text-xs font-bold uppercase hover:bg-accent hover:text-white transition-all" data-filter="suite">Suites</button>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="rooms-grid">
+                <!-- Deluxe Room -->
+                <div class="room-card group relative bg-white overflow-hidden rounded-2xl shadow-sm" data-category="deluxe">
+                    <div class="h-80 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1618773928121-c32242e63f39?auto=format&fit=crop&w=800&q=80" alt="Deluxe Room" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    </div>
+                    <div class="p-8">
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="text-xs font-bold uppercase tracking-widest text-accent">375 sqft / 2 Guests</span>
+                            <span class="text-xl font-bold">$199 <span class="text-xs font-normal text-stone-400">/ night</span></span>
+                        </div>
+                        <h4 class="text-2xl mb-4">Standard Deluxe Room</h4>
+                        <p class="text-stone-500 text-sm mb-6 leading-relaxed">Modern furnishings, a king-size bed, and panoramic city views.</p>
+                        <button onclick="openGallery('deluxe')" class="w-full border border-stone-200 py-3 rounded-xl hover:bg-stone-900 hover:text-white transition-all text-sm font-bold uppercase">View Gallery</button>
+                    </div>
+                </div>
+
+                <!-- Suite -->
+                <div class="room-card group relative bg-white overflow-hidden rounded-2xl shadow-sm" data-category="suite">
+                    <div class="h-80 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=800&q=80" alt="Presidential Suite" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    </div>
+                    <div class="p-8">
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="text-xs font-bold uppercase tracking-widest text-accent">900 sqft / 4 Guests</span>
+                            <span class="text-xl font-bold">$450 <span class="text-xs font-normal text-stone-400">/ night</span></span>
+                        </div>
+                        <h4 class="text-2xl mb-4">Presidential Suite</h4>
+                        <p class="text-stone-500 text-sm mb-6 leading-relaxed">Private terrace, jacuzzi, and separate living area for ultimate luxury.</p>
+                        <button onclick="openGallery('suite')" class="w-full border border-stone-200 py-3 rounded-xl hover:bg-stone-900 hover:text-white transition-all text-sm font-bold uppercase">View Gallery</button>
+                    </div>
+                </div>
+
+                <!-- Family Room -->
+                <div class="room-card group relative bg-white overflow-hidden rounded-2xl shadow-sm" data-category="deluxe">
+                    <div class="h-80 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1566665797739-1674de7a421a?auto=format&fit=crop&w=800&q=80" alt="Family Superior" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    </div>
+                    <div class="p-8">
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="text-xs font-bold uppercase tracking-widest text-accent">550 sqft / 3 Guests</span>
+                            <span class="text-xl font-bold">$275 <span class="text-xs font-normal text-stone-400">/ night</span></span>
+                        </div>
+                        <h4 class="text-2xl mb-4">Family Superior</h4>
+                        <p class="text-stone-500 text-sm mb-6 leading-relaxed">Spacious layout and kid-friendly features for the whole family.</p>
+                        <button onclick="openGallery('family')" class="w-full border border-stone-200 py-3 rounded-xl hover:bg-stone-900 hover:text-white transition-all text-sm font-bold uppercase">View Gallery</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Modal -->
+    <div id="gallery-modal" class="fixed inset-0 z-[60] hidden bg-black/95 flex items-center justify-center p-4">
+        <button onclick="closeGallery()" class="absolute top-8 right-8 text-white text-4xl hover:text-accent transition-colors"><i class="fas fa-times"></i></button>
+        <div class="max-w-5xl w-full">
+            <div id="gallery-container" class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                <!-- Images injected here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact / Booking -->
+    <section id="contact" class="py-24 px-4 bg-white">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20">
+            <div>
+                <h2 class="text-accent text-sm font-bold uppercase tracking-widest mb-4">Contact Us</h2>
+                <h3 class="text-4xl mb-8">Book Your Stay Today</h3>
+                <div class="space-y-6">
+                    <div class="flex items-start gap-4">
+                        <div class="bg-stone-100 p-4 rounded-full text-accent"><i class="fas fa-map-marker-alt"></i></div>
+                        <div>
+                            <h5 class="font-bold uppercase text-xs tracking-widest mb-1">Address</h5>
+                            <p class="text-stone-600">450 Park Avenue, New York, NY 10022</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <div class="bg-stone-100 p-4 rounded-full text-accent"><i class="fas fa-phone"></i></div>
+                        <div>
+                            <h5 class="font-bold uppercase text-xs tracking-widest mb-1">Phone</h5>
+                            <p class="text-stone-600">+1 (212) 555-0198</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-stone-50 p-8 md:p-12 rounded-3xl border border-stone-200">
+                <form class="space-y-6" onsubmit="event.preventDefault(); showSuccess();">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <input type="text" placeholder="Full Name" class="w-full bg-white border-b border-stone-300 py-3 focus:outline-none focus:border-accent">
+                        <input type="email" placeholder="Email Address" class="w-full bg-white border-b border-stone-300 py-3 focus:outline-none focus:border-accent">
+                    </div>
+                    <select class="w-full bg-white border-b border-stone-300 py-3 focus:outline-none focus:border-accent">
+                        <option>Deluxe Room</option>
+                        <option>Presidential Suite</option>
+                        <option>Family Superior</option>
+                    </select>
+                    <textarea rows="4" placeholder="Special Requests" class="w-full bg-white border-b border-stone-300 py-3 focus:outline-none focus:border-accent resize-none"></textarea>
+                    <button type="submit" class="w-full bg-accent text-white py-4 rounded-xl font-bold uppercase tracking-widest hover:bg-stone-800 transition-all">Send Reservation Request</button>
+                </form>
+                <div id="success-message" class="hidden mt-6 p-4 bg-green-100 text-green-700 rounded-xl text-center font-bold">
+                    Thank you! Our team will contact you shortly.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-stone-900 text-white py-16 px-4">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+            <span class="serif text-3xl font-bold tracking-tighter">LUXE<span class="text-accent">STAY</span></span>
+            <p class="text-stone-500 text-xs uppercase tracking-widest">&copy; 2024 Luxestay Hotel. All rights reserved.</p>
+        </div>
     </footer>
 
+    <script>
+        // Filtering and Gallery logic
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const roomCards = document.querySelectorAll('.room-card');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => b.classList.remove('active', 'bg-accent', 'text-white'));
+                btn.classList.add('active', 'bg-accent', 'text-white');
+                const filter = btn.getAttribute('data-filter');
+                roomCards.forEach(card => {
+                    card.style.display = (filter === 'all' || card.getAttribute('data-category') === filter) ? 'block' : 'none';
+                });
+            });
+        });
+
+        const galleries = {
+            deluxe: ['https://images.unsplash.com/photo-1618773928121-c32242e63f39?auto=format&fit=crop&w=600&q=80', 'https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?auto=format&fit=crop&w=600&q=80'],
+            suite: ['https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=600&q=80', 'https://images.unsplash.com/photo-1631049307264-da0ec9d70304?auto=format&fit=crop&w=600&q=80'],
+            family: ['https://images.unsplash.com/photo-1566665797739-1674de7a421a?auto=format&fit=crop&w=600&q=80', 'https://images.unsplash.com/photo-1598928506311-c55ded91a20c?auto=format&fit=crop&w=600&q=80']
+        };
+
+        function openGallery(type) {
+            const container = document.getElementById('gallery-container');
+            container.innerHTML = galleries[type].map(src => `<div class="overflow-hidden rounded-xl h-48 md:h-64"><img src="${src}" class="w-full h-full object-cover"></div>`).join('');
+            document.getElementById('gallery-modal').classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeGallery() {
+            document.getElementById('gallery-modal').classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+
+        function showSuccess() {
+            document.getElementById('success-message').classList.remove('hidden');
+        }
+    </script>
 </body>
 </html>
